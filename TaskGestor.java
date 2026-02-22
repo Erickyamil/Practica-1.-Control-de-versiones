@@ -10,4 +10,14 @@ public class TaskGestor {
     public ArrayList<Task> getList() {
         return list;
     }
+    
+
+    public boolean delete(int index) {
+        if (index >= 0 && index < list.size()) {
+            list.remove(index);
+            return true;
+        }
+        return false;
+    }
+
 }

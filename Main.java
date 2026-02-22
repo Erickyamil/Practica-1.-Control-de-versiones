@@ -35,6 +35,24 @@ public class Main {
                             System.out.println((i+1) + ". " + tasks.get(i));
                     }
                 }
+                case 3 -> {
+                    var tasks = gestor.getList();
+                    if (tasks.isEmpty()) {
+                        System.out.println("No hay tareas para eliminar.");
+                    } else {
+                        System.out.println("\n--- TUS TAREAS ---");
+                        for(int i = 0; i < tasks.size(); i++)
+                            System.out.println((i+1) + ". " + tasks.get(i));
+                        System.out.print("Número de la tarea a eliminar: ");
+                        int index = input.nextInt();
+                        input.nextLine();
+                        if (gestor.delete(index - 1)) {
+                            System.out.println("Tarea eliminada correctamente.");
+                        } else {
+                            System.out.println("Número inválido.");
+                        }
+                    }
+                }
                 case 4 -> System.out.println("Saliendo...");
                 default -> System.out.println("Opción inválida.");
             }
